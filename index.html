@@ -1,45 +1,327 @@
-<section class="form-section">
-  <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 25px;">Book Confidential Consultation</h2>
-  <form action="https://api.web3forms.com/submit" method="POST">
-    <input type="hidden" name="access_key" value="cb04a3e5-ef20-4d66-bb7d-d56cc2e1fb7f">
-    <input type="hidden" name="subject" value="New Consultation Request - Viper Eye">
-    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Viper Eye Detective Agency | The Truth Matters</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090c;
+      --card-bg: #10141a;
+      --gold-primary: #d4af37;
+      --gold-light: #f3e5ab;
+      --gold-dark: #aa820a;
+      --text-muted: #a0a5b1;
+      --border-gold: rgba(212, 175, 55, 0.25);
+    }
 
-    <div class="form-group">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border-gold);
+      background: rgba(7, 9, 12, 0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      color: var(--gold-primary);
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      background: radial-gradient(circle at center, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    }
+
+    .hero-tag {
+      font-size: 0.85rem;
+      letter-spacing: 5px;
+      color: var(--gold-primary);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .hero-sub {
+      font-family: 'Cinzel', serif;
+      font-style: italic;
+      color: var(--gold-light);
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      color: var(--gold-primary);
+      font-size: 2rem;
+      margin-bottom: 35px;
+      position: relative;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-gold);
+      border-radius: 8px;
+      padding: 25px 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold-primary);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.15);
+    }
+
+    .card i {
+      font-size: 2rem;
+      color: var(--gold-primary);
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 1.05rem;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .price {
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .form-section {
+      max-width: 650px;
+      margin: 60px auto;
+      padding: 40px 30px;
+      background: var(--card-bg);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+    }
+
+    .form-group input, 
+    .form-group select {
+      width: 100%;
+      padding: 12px 15px;
+      background: #090c10;
+      border: 1px solid var(--border-gold);
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus, 
+    .form-group select:focus {
+      border-color: var(--gold-primary);
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--gold-primary), var(--gold-dark));
+      color: #000;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid var(--border-gold);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-eye"></i> VIPER EYE
     </div>
-    <div class="form-group">
-      <label for="phone">Phone Number</label>
-      <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+  </header>
+
+  <section class="hero">
+    <div class="hero-tag">Private • Professional • Confidential</div>
+    <h1>VIPER EYE DETECTIVE AGENCY</h1>
+    <div class="hero-sub">The Truth Matters</div>
+    <p>Professional investigation services to uncover the truth, protect your interests, and bring clarity to your life.</p>
+  </section>
+
+  <section class="services-container">
+    <h2 class="section-title">Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fa-solid fa-user-shield"></i>
+        <h3>Background Verification</h3>
+        <span class="price">From ₹2,999</span>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-ring"></i>
+        <h3>Pre-Matrimonial</h3>
+        <span class="price">From ₹4,999</span>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-heart-crack"></i>
+        <h3>Post-Matrimonial</h3>
+        <span class="price">From ₹6,999</span>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-briefcase"></i>
+        <h3>Employment Verification</h3>
+        <span class="price">From ₹2,499</span>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-house-user"></i>
+        <h3>Tenant Verification</h3>
+        <span class="price">From ₹1,999</span>
+      </div>
+      <div class="card">
+        <i class="fa-solid fa-building"></i>
+        <h3>Corporate Investigation</h3>
+        <span class="price">From ₹7,999</span>
+      </div>
     </div>
-    <div class="form-group">
-      <label for="location">Location</label>
-      <input type="text" id="location" name="location" placeholder="Enter your city / area" required>
-    </div>
-    <div class="form-group">
-      <label for="service">Select Service</label>
-      <select id="service" name="service" required>
-        <option value="" disabled selected>Select a service</option>
-        <option value="Background Verification">Background Verification</option>
-        <option value="Pre-Matrimonial Investigation">Pre-Matrimonial Investigation</option>
-        <option value="Post-Matrimonial Investigation">Post-Matrimonial Investigation</option>
-        <option value="Employment Verification">Employment Verification</option>
-        <option value="Tenant Verification">Tenant Verification</option>
-        <option value="Corporate Investigation">Corporate Investigation</option>
-        <option value="Other Confidential Service">Other Confidential Service</option>
-      </select>
-    </div>
-    <div class="form-group">
-      <label for="timing">Preferred Timing</label>
-      <input type="text" id="timing" name="timing" placeholder="eg: Morning 10:00 AM - 12:00 PM" required>
-    </div>
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
-</section>
-<div class="form-group">
-  <label style="display: flex; align-items: center; gap: 10px;">
-    <input type="checkbox" name="terms" required style="width: auto;">
-    I agree to the Terms and Conditions
-  </label>
-</div>
+  </section>
+
+  <section class="form-section">
+    <h2 class="section-title" style="font-size: 1.6rem; margin-bottom: 25px;">Book Confidential Consultation</h2>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="cb04a3e5-ef20-4d66-bb7d-d56cc2e1fb7f">
+      <input type="hidden" name="subject" value="New Consultation Request - Viper Eye">
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your mobile number" required>
+      </div>
+
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" id="location" name="location" placeholder="Enter your city / area" required>
+      </div>
+
+      <div class="form-group">
+        <label for="service">Select Service</label>
+        <select id="service" name="service" required>
+          <option value="" disabled selected>Select a service</option>
+          <option value="Background Verification">Background Verification</option>
+          <option value="Pre-Matrimonial Investigation">Pre-Matrimonial Investigation</option>
+          <option value="Post-Matrimonial Investigation">Post-Matrimonial Investigation</option>
+          <option value="Employment Verification">Employment Verification</option>
+          <option value="Tenant Verification">Tenant Verification</option>
+          <option value="Corporate Investigation">Corporate Investigation</option>
+          <option value="Other Confidential Service">Other Confidential Service</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="timing">Preferred Timing</label>
+        <input type="text" id="timing" name="timing" placeholder="eg: Morning 10:00 AM - 12:00 PM" required>
+      </div>
+
+      <div class="form-group">
+        <label style="display: flex; align-items: center; gap: 10px;">
+          <input type="checkbox" name="terms" required style="width: auto;">
+          I agree to the Terms and Conditions
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>100% Confidential | Professional Approach | Reliable Results</p>
+    <p style="margin-top: 5px;">&copy; Viper Eye Detective Agency. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
