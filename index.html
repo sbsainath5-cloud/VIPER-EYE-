@@ -1,7 +1,221 @@
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="cb04a3e5-ef20-4d66-bb7d-d56cc2e1fb7f">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viper Eye Detective Agency | The Truth Matters</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0c0d12;
+            --card-bg: #13151c;
+            --primary-gold: #d4a353;
+            --metallic-gold: #c5a059;
+            --light-gold: #efd08d;
+            --text-color: #cccccc;
+            --white: #ffffff;
+            --border-glow: rgba(212, 163, 83, 0.2);
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Typography & Headings */
+        h1, h2, h3 {
+            color: var(--white);
+            font-family: 'Cinzel', serif, Georgia;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        .gold-text {
+            color: var(--primary-gold);
+        }
+
+        /* Buttons & CTAs */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--light-gold), var(--primary-gold), var(--metallic-gold));
+            color: var(--bg-color);
+            padding: 15px 30px;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 163, 83, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 163, 83, 0.5);
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: radial-gradient(circle at center, rgba(30, 35, 45, 0.8) 0%, rgba(12, 13, 18, 1) 70%), url('https://images.unsplash.com/photo-1541873676-a1813149ab65?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, var(--light-gold), var(--white));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero .tagline {
+            font-size: 1.2rem;
+            color: var(--primary-gold);
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-glow);
+            padding: 40px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-gold);
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover i {
+            transform: scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: var(--text-color);
+            margin-bottom: 25px;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: var(--primary-gold);
+            font-size: 1.2rem;
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        /* Footer / Contact Protocol */
+        .footer-protocol {
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-glow);
+            padding: 60px 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="tagline">Discreet • Professional • Confidential</span>
+        <h1>VIPER EYE</h1>
+        <h2>DETECTIVE AGENCY</h2>
+        <p>The Truth Matters.</p>
+        <div style="margin-top: 40px;">
+            <a href="#contact" class="btn-primary" style="margin-right: 20px;">Request Consultation</a>
+            <a href="#services" style="color: var(--white); text-decoration: none; border-bottom: 1px solid var(--primary-gold);">Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2 style="text-align: center;">Our Investigation Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-user-secret"></i>
+                <h3>Background Verification</h3>
+                <span class="price-tag">From ₹2,999</span>
+                <p>Thorough investigation into individual histories.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-ring"></i>
+                <h3>Pre-Matrimonial Investigation</h3>
+                <span class="price-tag">From ₹4,999</span>
+                <p>Verifying backgrounds before committing.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-heart-broken"></i>
+                <h3>Post-Matrimonial Investigation</h3>
+                <span class="price-tag">From ₹6,999</span>
+                <p>Evidence gathering for complex marital situations.</p>
+            </div>
+            <!-- Additional services can be added here -->
+        </div>
+    </section>
+
+    <!-- One-Way Contact Protocol Section -->
+    <section id="contact" style="background-color: var(--card-bg);">
+        <h2 style="text-align: center; margin-bottom: 10px;">Secure One-Way Protocol</h2>
+        <p style="text-align: center; color: var(--primary-gold); margin-bottom: 40px;">No public contact vectors. Submit your details securely and our operatives will contact you.</p>
+        <form style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column;">
+            <input type="text" placeholder="Alias / Reference Name" style="background: transparent; border: 1px solid var(--border-glow); padding: 15px; margin-bottom: 20px; color: white;" required>
+            <select style="background: transparent; border: 1px solid var(--border-glow); padding: 15px; margin-bottom: 20px; color: var(--white);" required>
+                <option value="" style="background-color: var(--bg-color);">Preferred Contact Method</option>
+                <option value="call" style="background-color: var(--bg-color);">Discreet Voice Call</option>
+                <option value="whatsapp" style="background-color: var(--bg-color);">WhatsApp</option>
+                <option value="email" style="background-color: var(--bg-color);">Secure Email</option>
+            </select>
+            <input type="text" placeholder="Safe Time to Reach You" style="background: transparent; border: 1px solid var(--border-glow); padding: 15px; margin-bottom: 20px; color: white;" required>
+            <button type="submit" class="btn-primary">Submit Secure Inquiry</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-protocol">
+        <p>© 2026 Viper Eye Detective Agency. All rights reserved. Confidentiality guaranteed.</p>
+    </footer>
+
+</body>
+</html>
+
+
