@@ -326,3 +326,50 @@
 
 </body>
 </html>
+<form action="https://api.web3forms.com/submit" method="POST">
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="cb04a3e5-ef20-4d66-bb7d-d56cc2e1fb7f">
+
+  <!-- ఇమెయిల్ సబ్జెక్ట్ స్పష్టంగా కనిపించడానికి -->
+  <input type="hidden" name="subject" value="New Consultation Request - Viper Eye">
+  
+  <!-- స్పామ్ బాట్ల నివారణకు -->
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <div class="form-group">
+    <label for="name">పూర్తి పేరు (Full Name)</label>
+    <input type="text" id="name" name="Full Name" placeholder="మీ పేరు నమోదు చేయండి" required>
+  </div>
+
+  <div class="form-group">
+    <label for="phone">ఫోన్ నంబర్ (Phone Number)</label>
+    <input type="tel" id="phone" name="Phone Number" placeholder="మీ మొబైల్ నంబర్" required>
+  </div>
+
+  <div class="form-group">
+    <label for="location">లొకేషన్ (Location)</label>
+    <input type="text" id="location" name="Location" placeholder="మీ నగరం / ప్రాంతం" required>
+  </div>
+
+  <div class="form-group">
+    <label for="service">కావాల్సిన సర్వీస్ (Select Service)</label>
+    <select id="service" name="Selected Service" required>
+      <option value="" disabled selected>సర్వీస్ ఎంచుకోండి</option>
+      <option value="Background Verification">Background Verification</option>
+      <option value="Pre-Matrimonial Investigation">Pre-Matrimonial Investigation</option>
+      <option value="Post-Matrimonial Investigation">Post-Matrimonial Investigation</option>
+      <option value="Employment Verification">Employment Verification</option>
+      <option value="Tenant Verification">Tenant Verification</option>
+      <option value="Corporate Investigation">Corporate Investigation</option>
+      <option value="Other Confidential Service">Other Confidential Service</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="timing">కాల్ చేయడానికి అనువైన సమయం (Preferred Timing)</label>
+    <input type="text" id="timing" name="Preferred Timing" placeholder="ఉదా: ఉదయం 10:00 - 12:00 మధ్య" required>
+  </div>
+
+  <button type="submit" class="submit-btn">Send Message</button>
+</form>
+
